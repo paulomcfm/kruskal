@@ -40,8 +40,9 @@ public class Graph {
     }
 
     public void printMatrix() {
+        System.out.println("Graph edges:");
         for (int i = 0; i < edges.length; i++) {
-            System.out.println(edges[i].src + " - " + edges[i].dest + ": " + edges[i].weight);
+            System.out.println((edges[i].src + 1) + " - " + (edges[i].dest + 1) + ": " + edges[i].weight);
         }
     }
 
@@ -83,7 +84,7 @@ public class Graph {
 
         System.out.println("Edges in the MST:");
         for (i = 0; i < e; ++i)
-            System.out.println(result[i].src + " - " + result[i].dest + ": " + result[i].weight);
+            System.out.println((result[i].src + 1) + " - " + (result[i].dest + 1) + ": " + result[i].weight);
 
         System.out.println("Total cost of the MST: " + totalCost);
     }
