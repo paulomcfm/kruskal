@@ -57,10 +57,11 @@ public class Graph {
         parent[xset] = yset;
     }
 
-    void kruskalMST() {
+    public void kruskalMST() {
         Edge[] result = new Edge[V - 1];
         int e = 0;
         int i = 0;
+        int totalCost = 0;
 
         Arrays.sort(edges);
 
@@ -76,12 +77,14 @@ public class Graph {
             if (x != y) {
                 result[e++] = next_edge;
                 union(parent, x, y);
+                totalCost += next_edge.weight;
             }
         }
 
         System.out.println("Edges in the MST:");
         for (i = 0; i < e; ++i)
-            System.out.println(result[i].src + " - "
-                    + result[i].dest + ": " + result[i].weight);
+            System.out.println(result[i].src + " - " + result[i].dest + ": " + result[i].weight);
+
+        System.out.println("Total cost of the MST: " + totalCost);
     }
 }
